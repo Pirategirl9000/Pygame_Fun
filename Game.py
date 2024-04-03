@@ -11,7 +11,7 @@ player = Player()
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False #can't use break here because of for loop
+            running = False
     
     screen.fill((0, 0, 0))
     

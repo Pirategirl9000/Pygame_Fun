@@ -2,7 +2,9 @@
 PlayerObject and associated methods
 """
 
-class Player(object):
+import Game
+
+class Player(object, Game):
     def __init__(self):
         """
         Create new Player Object
@@ -12,12 +14,10 @@ class Player(object):
         """
         
         self.alive = True
-        self.x = 0
-        self.y = 200
         
         pass
     
-    def getAlive(self):
+    def get_alive(self):
         """
         Returns whether or not Player is alive
         *args: None
@@ -25,11 +25,6 @@ class Player(object):
         returns: boolean
         """
         return self.alive
-    def get_pos(self):
-        """
-        Returns X and Y coordinates
-        *args: None
-        args: None
-        returns: int[x, y]
-        """
-        return [self.x, self.y]
+    
+    def death(self):
+        self.alive = False

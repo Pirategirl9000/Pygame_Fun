@@ -6,6 +6,7 @@ pygame.init
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((1280, 720))
 running = True
+
 player = Player()
 
 while player.get_alive():

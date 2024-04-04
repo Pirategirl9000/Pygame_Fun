@@ -1,7 +1,6 @@
 """
 PlayerObject and associated methods
 """
-
 import Game
 
 class Player(object, Game):
@@ -19,7 +18,7 @@ class Player(object, Game):
     
     def get_alive(self):
         """
-        Returns whether or not Player is alive
+       Returns whether or not Player is alive
         *args: None
         args: None
         returns: boolean

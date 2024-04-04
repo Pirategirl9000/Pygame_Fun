@@ -15,6 +15,7 @@ class Enemy(object, Game):
         self.y = y
         self.alive = True
         
+        
         self.__search() #starts seeking out player
         pass
     

@@ -5,9 +5,9 @@ class Matrixical_Navigation(object):
     def move(self, direction:str, matrix:list, value:any = 1, square:bool = True):
         """
         Moves actor through a matrix
-        *args: direction:str("w", "a", "s", "d", "up", "left", "right", "down"), matrix:int[]
-        args: direction:str, matrix:int[], value:any square_matrix:bool
-        return: matrix = int[list]
+        *args: direction:str("w", "a", "s", "d", "up", "left", "right", "down"), matrix:list
+        args: direction:str, matrix:list, value:any square_matrix:bool
+        return: matrix:list
         """
         player = self.__get_loc(matrix, value)
         
@@ -34,12 +34,12 @@ class Matrixical_Navigation(object):
             matrix[player[0]][player[1]+1] = value
             matrix[player[0]][player[1]] = store
             return matrix
-        elif (direction == "up" and player[0] != 0):
+        elif (direction == "up" and player[0] != 0 and self.__canMove(player, direction, matrix)):
             store = matrix[player[0]-1][player[1]]
             matrix[player[0]-1][player[1]] = value
             matrix[player[0]][player[1]] = store
             return matrix
-        elif (direction == "down" and player[0] != len(matrix) - 1):
+        elif (direction == "down" and player[0] != len(matrix) - 1 and self.__canMove(player, direction, matrix)):
             store = matrix[player[0]+1][player[1]]
             matrix[player[0]+1][player[1]] = value
             matrix[player[0]][player[1]] = store
@@ -50,10 +50,27 @@ class Matrixical_Navigation(object):
     def __get_loc(self, matrix, value):
         """
         Gets (y,x) index of the actor
-        *args: matrix:int[], value:any
+        *args: matrix:list, value:any
         returns: [y_ind:int, x_ind:int]
         """
         for row in matrix:
             for item in row:
                 if item == value:
                     return [matrix.index(row), row.index(item)]
+                
+    def __canMove(self, player_loc, direction, matrix):
+        """
+        Determines whether actor can move up or down along a matrix
+        *args: player_loc:int[], direction:str, matrix:list
+        return: canMove:bool
+        """
+        row_length = 0
+        if (direction == "up"):
+            row_length = len(matrix[player_loc[0] - 1])
+        elif (direction == "down"):
+            row_length = len(matrix[player_loc[0] + 1])
+            
+        if (player_loc[1] < row_length):
+            return True
+        else:
+            return False

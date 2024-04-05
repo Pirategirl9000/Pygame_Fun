@@ -2,11 +2,11 @@
 Class for navigating a matrix based map
 """
 class Matrixical_Navigation(object):
-    def move(self, direction:str, matrix:list, value:any = 1, square:bool = True):
+    def move(self, direction:str, matrix:list, value:any = 1):
         """
         Moves actor through a matrix
         *args: direction:str("w", "a", "s", "d", "up", "left", "right", "down"), matrix:list
-        args: direction:str, matrix:list, value:any square_matrix:bool
+        args: direction:str, matrix:list, value:any
         return: matrix:list
         """
         player = self.__get_loc(matrix, value)

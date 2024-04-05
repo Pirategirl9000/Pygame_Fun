@@ -1,7 +1,8 @@
 import pygame
 from Player import *
 from Enemy import *
-import Matrixical_Navigation 
+import Matrixical_Navigation as nav
+
 
 pygame.init
 clock = pygame.time.Clock()

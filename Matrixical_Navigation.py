@@ -9,7 +9,7 @@ class Matrixical_Navigation(object):
         args: direction:str, matrix:int[], value:any square_matrix:bool
         return: matrix = int[list]
         """
-        player = self._get_loc(matrix, value)
+        player = self.__get_loc(matrix, value)
         
         if direction == "a":
             direction = "left"
@@ -47,7 +47,7 @@ class Matrixical_Navigation(object):
         else:
             return matrix
         
-    def _get_loc(self, matrix, value):
+    def __get_loc(self, matrix, value):
         """
         Gets (y,x) index of the actor
         *args: matrix:int[], value:any

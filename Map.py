@@ -14,8 +14,10 @@ class Map(object):
         *args: str file_name
         return: None
         """
-        
-        im = io.imread(file_name) #RGBA format
+        try:
+            im = io.imread(file_name) #RGBA format
+        except FileNotFoundError:
+            raise ValueError(f"File: {file_name} Could Not be Found")
         self.imarr = np.array(im)
 
         #remove alpha
@@ -33,6 +35,6 @@ class Map(object):
         Returns Map Matrix
         args: None
         *args: None
-        return: numpy.array(any[])
+        return: np.ndarray matrix_map
         """
         return self.imarr

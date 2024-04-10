@@ -1,7 +1,7 @@
 """
 Class for navigating a matrix based map
 """
-class Matrixical_Navigation(object): #TODO Change to use numpy arrays as well
+class Matrixical_Navigation(object): 
     def move(self, direction:str, matrix:list, value:any = 1):
         """
         Moves actor through a matrix
@@ -9,6 +9,9 @@ class Matrixical_Navigation(object): #TODO Change to use numpy arrays as well
         args: direction:str, matrix:list, value:any
         return: matrix:list
         """
+        
+        #TODO Change to use numpy arrays as well
+        
         player = self.__get_loc(matrix, value)
         
         if direction == "a":

@@ -2,8 +2,9 @@ import pygame
 import numpy as np
 from Player import *
 from Enemy import *
-import Matrixical_Navigation as nav
+from Matrixical_Navigation import np_array_nav as nav
 from Map import *
+from matplotlib import pyplot
 
 
 pygame.init

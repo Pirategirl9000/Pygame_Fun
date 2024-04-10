@@ -18,7 +18,7 @@ class Matrixical_Navigation(object):
         
         
 class List_nav(object, Matrixical_Navigation):
-    def __init__(self, matrix):
+    def __init__(self, matrix:list):
         self.matrix = matrix
     
     def move(self, direction:str, value:any = 1):

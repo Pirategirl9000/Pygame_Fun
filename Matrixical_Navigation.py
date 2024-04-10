@@ -17,7 +17,7 @@ class Matrixical_Navigation(object):
         pass
         
         
-class list_nav(object, Matrixical_Navigation):
+class List_nav(object, Matrixical_Navigation):
     def move(self, direction:str, matrix:list, value:any = 1):
         """
         Moves actor through a matrix
@@ -96,7 +96,7 @@ class list_nav(object, Matrixical_Navigation):
   
   
 #TODO Create this sub_module
-class np_array_nav(object, Matrixical_Navigation, np):
+class Np_array_nav(object, Matrixical_Navigation, np):
     def move(self, direction:str, matrix:np.ndarray, value:any = 1):
         """
         Moves actor through a matrix

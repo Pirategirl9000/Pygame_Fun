@@ -2,7 +2,7 @@ import pygame
 import numpy as np
 from Player import *
 from Enemy import *
-from Matrixical_Navigation import np_array_nav as nav
+from Matrixical_Navigation import Np_array_nav as nav
 from Map import *
 
 

@@ -121,24 +121,24 @@ class np_array_nav(object, Matrixical_Navigation, np):
             
         
         if (direction == "left" and player[1] != 0):
-            store = matrix[player[0]][player[1]-1]
-            matrix[player[0]][player[1]-1] = value
-            matrix[player[0]][player[1]] = store
+            store = matrix[player[0], player[1]-1]
+            matrix[player[0], player[1]-1] = value
+            matrix[player[0], player[1]] = store
             return matrix
         elif (direction == "right" and player[1] != len(matrix[player[0]]) - 1):
-            store = matrix[player[0]][player[1]+1]
-            matrix[player[0]][player[1]+1] = value
-            matrix[player[0]][player[1]] = store
+            store = matrix[player[0], player[1]+1]
+            matrix[player[0], player[1]+1] = value
+            matrix[player[0], player[1]] = store
             return matrix
         elif (direction == "up" and player[0] != 0 and self.__canMove(player, direction, matrix)):
-            store = matrix[player[0]-1][player[1]]
-            matrix[player[0]-1][player[1]] = value
-            matrix[player[0]][player[1]] = store
+            store = matrix[player[0]-1, player[1]]
+            matrix[player[0]-1, player[1]] = value
+            matrix[player[0], player[1]] = store
             return matrix
         elif (direction == "down" and player[0] != len(matrix) - 1 and self.__canMove(player, direction, matrix)):
-            store = matrix[player[0]+1][player[1]]
-            matrix[player[0]+1][player[1]] = value
-            matrix[player[0]][player[1]] = store
+            store = matrix[player[0]+1, player[1]]
+            matrix[player[0]+1, player[1]] = value
+            matrix[player[0], player[1]] = store
             return matrix
         else:
             return matrix
@@ -149,13 +149,14 @@ class np_array_nav(object, Matrixical_Navigation, np):
         *args: np.ndarray matrix, any value
         returns: [int y_ind, int x_ind]
         """
+        #used i and j so I don't need to learn numpy indexing with for loops
         i = 0
         j = 0
         
         for row in matrix:
             for item in row:
                 if item == value:
-                    return [i, j]
+                    return [i, j] #(y, x)
                 j += 1
             i += 1
         

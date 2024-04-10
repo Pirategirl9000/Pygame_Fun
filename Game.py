@@ -10,7 +10,7 @@ pygame.init
 clock = pygame.time.Clock()
 map_renderer = Map(file_name="map.png", binary=True, alpha=False, grey_scale=True, binary_light_value=0, binary_dark_value=1)
 map = map_renderer.get_map()
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((720, 720))
 running = True
 
 player = Player()

@@ -4,7 +4,6 @@ from Player import *
 from Enemy import *
 from Matrixical_Navigation import np_array_nav as nav
 from Map import *
-from matplotlib import pyplot
 
 
 pygame.init
